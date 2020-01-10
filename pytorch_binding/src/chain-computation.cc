@@ -73,7 +73,7 @@ ChainComputation::ChainComputation(
     backward_transition_indices_ = backward_transition_indices_.cuda();
     backward_transition_probs_ = backward_transition_probs_.cuda();
     initial_probs_ = initial_probs_.cuda();
-    final_probs_.cuda();
+    final_probs_ = final_probs_.cuda();
     alpha_ = alpha_.cuda();
     beta_ = beta_.cuda();
     tot_prob_ = tot_prob_.cuda();
