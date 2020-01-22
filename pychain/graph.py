@@ -41,7 +41,8 @@ class ChainGraph(object):
                 self.final_probs = torch.ones(
                     self.num_states, dtype=self.forward_transition_probs.dtype)
             else:
-                self.leaky_probs = torch.ones(self.num_states)
+                self.leaky_probs = torch.zeros(self.num_states)
+                self.leaky_probs[0] = 1.0
 
         elif not (transitions is None and transition_probs is None and num_states is None):
             assert(transitions.size(0) == transition_probs.size(0))
